@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package com.example.inventory;
+
+option java_package = "com.example.inventory";
+option java_outer_classname = "InventoryProto";
+
+service Inventory {
+  rpc CheckInventory (InventoryRequest) returns (InventoryResponse);
+}
+
+message InventoryRequest {
+  string product = 1;
+  int32 quantity = 2;
+}
+
+message InventoryResponse {
+  bool available = 1;
+}
